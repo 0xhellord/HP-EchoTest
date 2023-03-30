@@ -14,7 +14,7 @@ void RunServer() {
 
   uint64_t s_pkts = 0;
   while (1) {
-    sleep(1);
+    usleep(1000000);
     uint64_t now_s_pkts = RPCServer.GetTotalPkts();
 
     printf("Server qps: %lu\n", now_s_pkts - s_pkts);
@@ -33,7 +33,7 @@ void RunClient(LPCTSTR host = _T("127.0.0.1"), USHORT port = 5555) {
 
   uint64_t c_pkts = 0;
   while (1) {
-    sleep(1);
+    usleep(1000000);
     uint64_t now_c_pkts = RPCClinet.GetTotalPkts();
 
     printf("Client QPS: %lu\n", now_c_pkts - c_pkts);
